@@ -7,5 +7,5 @@ $fb = new Facebook\Facebook([
 ]);
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://3rd-login.vn/?file=button-php&page=finish', $permissions);
+$loginUrl = $helper->getLoginUrl('https://login-3rd.com/?file=button-php&page=finish', $permissions);
 echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
