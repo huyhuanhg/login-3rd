@@ -1,0 +1,8 @@
+{
+  "require": {
+    "google/apiclient": "1.0.*@beta",
+    "phpmailer/phpmailer": "^6.5",
+    "facebook/graph-sdk": "^5.7",
+    "vlucas/phpdotenv": "^5.4"
+  }
+}

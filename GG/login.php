@@ -1,11 +1,9 @@
 <?php
- 
- require_once('./vendor/google-api-php-client/vendor/autoload.php');
- 
+
 // Lấy những giá trị này từ https://console.google.com
-$client_id = '552504942422-n1pgqclbnsb70mmkrbum6nabp92pkqo5.apps.googleusercontent.com'; 
-$client_secret = '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';
-$redirect_uri = 'https://login-3rd.com?file=login-gg.html';
+$client_id = GG_CLIENT_ID;
+$client_secret = GG_CLIENT_SECRET;
+$redirect_uri = GG_REDIRECT_URI;
 
 $client = new Google_Client();
 $client->setClientId($client_id);

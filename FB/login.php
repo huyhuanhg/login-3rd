@@ -1,9 +1,8 @@
 <?php
-require_once('./vendor/php-graph-sdk/src/Facebook/autoload.php');
 $fb = new Facebook\Facebook([
-    'app_id' => '1455099791558695',
-    'app_secret' => 'bef4bfcf45b688f9a23b9f08d641d365',
-    'default_graph_version' => 'v2.9',
+    'app_id' => FB_APP_ID,
+    'app_secret' => FB_APP_SECRET,
+    'default_graph_version' => FB_DEFAULT_GRAPH_VERSION,
 ]);
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email']; // Optional permissions

@@ -1,23 +1,23 @@
-<!-- <html>
-    <head>
-    </head>
-  <body>
-      <script src="https://accounts.google.com/gsi/client" async defer></script>
-      <div id="g_id_onload"
-         data-client_id="552504942422-n1pgqclbnsb70mmkrbum6nabp92pkqo5.apps.googleusercontent.com"
-         data-login_uri="https://login-3rd.com/?file=connect-gg.html"
-         data-auto_prompt="false">
-      </div>
-      <div class="g_id_signin"
-         data-type="standard"
-         data-size="large"
-         data-theme="outline"
-         data-text="sign_in_with"
-         data-shape="rectangular"
-         data-logo_alignment="left">
-      </div>
-  </body>
-</html> -->
+<!--<html>-->
+<!--    <head>-->
+<!--    </head>-->
+<!--  <body>-->
+<!--      <script src="https://accounts.google.com/gsi/client" async defer></script>-->
+<!--      <div id="g_id_onload"-->
+<!--         data-client_id="--><?//=GG_CLIENT_ID?><!--"-->
+<!--         data-login_uri="--><?//=GG_REDIRECT_URI?><!--"-->
+<!--         data-auto_prompt="false">-->
+<!--      </div>-->
+<!--      <div class="g_id_signin"-->
+<!--         data-type="standard"-->
+<!--         data-size="large"-->
+<!--         data-theme="outline"-->
+<!--         data-text="sign_in_with"-->
+<!--         data-shape="rectangular"-->
+<!--         data-logo_alignment="left">-->
+<!--      </div>-->
+<!--  </body>-->
+<!--</html> -->
 <html>
   <body>
       <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -29,7 +29,7 @@
         }
         window.onload = function () {
           google.accounts.id.initialize({
-            client_id: "552504942422-n1pgqclbnsb70mmkrbum6nabp92pkqo5.apps.googleusercontent.com",
+            client_id: "<?=GG_CLIENT_ID?>",
             callback: handleCredentialResponse
           });
           google.accounts.id.renderButton(

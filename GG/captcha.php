@@ -3,27 +3,17 @@
 <head>
     <title>reCAPTCHA demo: Simple page</title>
     <!-- v2 -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+     <script src="https://www.google.com/recaptcha/api.js"></script>
 
     <!-- v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfQzuUdAAAAAKD6eRsh1QjBbdiav1cciY0n85Fj"></script>
+<!--    <script src="https://www.google.com/recaptcha/api.js?render=--><?//=GG_CAPTCHA_V3_KEY?><!--"></script>-->
 </head>
 
 <body>
     <!-- v2 -->
     <form action="https://login-3rd.com/?file=captcha-post" method="POST">
-        <!-- 
-            https://www.google.com/recaptcha/admin/create
-            https://www.google.com/recaptcha/admin/site/501564546/setup
-            key: 6LeCROUdAAAAAEETq3oPt-oHmgeZzaDXwt6QAZEl
-            secret: 6LeCROUdAAAAABSo1y5ONUW08XaMDnMj_G4rPARx
-        -->
-        <!-- 
-            https://www.google.com/recaptcha/admin/site/501599952/setup
-            key: 6LfQzuUdAAAAAKD6eRsh1QjBbdiav1cciY0n85Fj
-            secret: 6LfQzuUdAAAAAHu_A1htokBviQo2XsNny9StXzen
-        -->
-        <div class="g-recaptcha" data-sitekey="6LeCROUdAAAAAEETq3oPt-oHmgeZzaDXwt6QAZEl"></div>
+
+        <div class="g-recaptcha" data-sitekey="<?=GG_CAPTCHA_V2_KEY?>"></div>
         <br />
         <input type="submit" value="Submit">
     </form>
@@ -38,7 +28,7 @@
         grecaptcha.ready(function() {
             // do request for recaptcha token
             // response is promise with passed token
-            grecaptcha.execute('6LfQzuUdAAAAAKD6eRsh1QjBbdiav1cciY0n85Fj', {
+            grecaptcha.execute('<?=GG_CAPTCHA_V3_KEY?>', {
                     action: 'validate_captcha'
                 })
                 .then(function(token) {

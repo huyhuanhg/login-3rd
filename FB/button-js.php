@@ -35,7 +35,7 @@
         //<![CDATA[
         window.fbAsyncInit = function() {
             FB.init({
-                appId: '1455099791558695', // App ID
+                appId: '<?=FB_APP_ID?>', // App ID
                 channelURL: '', // Channel File, not required so leave empty
                 status: true, // check login status
                 cookie: true, // enable cookies to allow the server to access the session

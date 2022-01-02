@@ -5,8 +5,8 @@
 
 $response = $_POST['g-recaptcha-response'];
 $ip = $_SERVER['REMOTE_ADDR'];
-// $list = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeCROUdAAAAABSo1y5ONUW08XaMDnMj_G4rPARx&response=$response&remoteip=$ip");
-// print_r($_POST);
+ $list = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . GG_CAPTCHA_V2_SECRET . "&response=$response&remoteip=$ip");
+ print_r($list);
 
 
 
@@ -15,18 +15,18 @@ $ip = $_SERVER['REMOTE_ADDR'];
 // v3
 
 // if (isset($_POST['g-recaptcha-response'])) {
-    $captcha = $_POST['g-recaptcha-response'];
+//    $captcha = $_POST['g-recaptcha-response'];
 // } else {
 //     $captcha = false;
 // }
 // if (!$captcha) {
 //     //Do something with error
 // } else {
-    $response = file_get_contents(
-        "https://www.google.com/recaptcha/api/siteverify?secret=6LfQzuUdAAAAAHu_A1htokBviQo2XsNny9StXzen&response=" . $captcha . "&remoteip=" . $ip
-    );
-
-    print_r($response);
+//    $response = file_get_contents(
+//        "https://www.google.com/recaptcha/api/siteverify?secret=" . GG_CAPTCHA_V3_SECRET . "&response=" . $response . "&remoteip=" . $ip
+//    );
+//
+//    print_r($response);
     // use json_decode to extract json response
 //     $response = json_decode($response);
 

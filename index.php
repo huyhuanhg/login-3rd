@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+require_once('./vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+require_once('./load_default/helper.php');
+require_once('./load_default/define.php');
+
 $file = $_GET['file'];
 if (!$file) {
     return renderError();
@@ -29,34 +38,12 @@ switch ($file) {
             return require_once('./GG/captcha.php');
         }
     case 'captcha-post': {
-            return require_once('./GG/captcha-post.php');
-        }
+        return require_once('./GG/captcha-post.php');
+    }
+    case 'send-mail': {
+        return require_once('./Mail/send-mail.php');
+    }
     default: {
             return renderError();
         }
-}
-
-function renderError()
-{
-    echo 'Params is empty or invalid!';
-    die();
-}
-
-function renderUserInfo($id, $email, $name, $isToken = false, $link = false, $picture = false)
-{
-    echo '<b>Logged in as:</b> ' . $name;
-    echo "<br/>";
-    echo '<b>ID: </b>' . $id;
-    echo "<br/>";
-    echo '<b>Email: </b>' . $email;
-    echo "<br/>";
-    if ($link) {
-        echo '<b>Link: </b>' . $link;
-        echo "<br/>";
-    }
-    if ($picture) {
-        echo '<b>Picture: </b>' . $picture;
-        echo "<br/>";
-    }
-    echo '<b>HasToken: </b>' . ((string) $isToken);
 }
