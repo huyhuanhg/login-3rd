@@ -33,4 +33,5 @@ if (! isset($accessToken)) {
 }
 // Logged in
 $_SESSION['fb_access_token'] = (string) $accessToken;
-renderUserInfo($response->getGraphUser());
+$me = $response->getGraphUser();
+renderUserInfo($me->getId(), $me->getEmail(), $me->getName(), !!$_SESSION['fb_access_token']);
